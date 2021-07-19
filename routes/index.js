@@ -1,0 +1,37 @@
+var express = require("express");
+var router = express.Router();
+
+("use strict");
+
+const term = "food";
+const location = 19146;
+
+const yelp = require("yelp-fusion");
+
+// Place holder for Yelp Fusion's API Key. Grab them
+// from https://www.yelp.com/developers/v3/manage_app
+//apiKey is placed in gitignore file.
+const apiKey = require("../sourceData");
+
+const searchRequest = {
+  term,
+  location,
+};
+
+router.get("/", (req, res, next) => {
+  const client = yelp.client(apiKey);
+  client
+    .search(searchRequest)
+    .then((response) => {
+      const firstResult = response.jsonBody.businesses;
+      const prettyJson = JSON.stringify(firstResult, null, 4);
+      // console.log(prettyJson);
+      res.send(prettyJson);
+    })
+    .catch((e) => {
+      console.log(e);
+      res.send(e);
+    });
+});
+
+module.exports = router;
