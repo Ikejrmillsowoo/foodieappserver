@@ -4,7 +4,7 @@ var router = express.Router();
 ("use strict");
 
 const term = "food";
-const location = 19146;
+const location = "19146";
 
 const yelp = require("yelp-fusion");
 
@@ -26,6 +26,28 @@ router.get("/", (req, res, next) => {
       const firstResult = response.jsonBody.businesses;
       const prettyJson = JSON.stringify(firstResult, null, 4);
       // console.log(prettyJson);
+      res.send(prettyJson);
+    })
+    .catch((e) => {
+      console.log(e);
+      res.send(e);
+    });
+});
+
+router.post("/create", (req, res, next) => {
+  console.log(req.body);
+  const newSearchRequest = {
+    term: "cars",
+    location: 19702,
+  };
+  console.log(newSearchRequest);
+  const client = yelp.client(apiKey);
+  client
+    .search(newSearchRequest)
+    .then((response) => {
+      const firstResult = response.jsonBody.businesses;
+      const prettyJson = JSON.stringify(firstResult, null, 4);
+      console.log(prettyJson);
       res.send(prettyJson);
     })
     .catch((e) => {
