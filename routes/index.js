@@ -34,12 +34,8 @@ router.get("/", (req, res, next) => {
     });
 });
 
-router.post("/create", (req, res, next) => {
-  console.log(req.body);
-  const newSearchRequest = {
-    term: "cars",
-    location: 19702,
-  };
+router.post("/", (req, res, next) => {
+  const newSearchRequest = req.body;
   console.log(newSearchRequest);
   const client = yelp.client(apiKey);
   client
@@ -47,7 +43,7 @@ router.post("/create", (req, res, next) => {
     .then((response) => {
       const firstResult = response.jsonBody.businesses;
       const prettyJson = JSON.stringify(firstResult, null, 4);
-      console.log(prettyJson);
+      //console.log(prettyJson);
       res.send(prettyJson);
     })
     .catch((e) => {
