@@ -2,21 +2,29 @@ const mongoose = require("mongoose");
 //const passportLocalMongoose = require("passport-local-mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
+const favoritesSchema = new Schema(
   {
-    firstname: {
+    name: {
       type: String,
       default: "",
     },
-    lastname: {
+    phone: {
+      type: Number,
+      default: "",
+    },
+    address: {
       type: String,
       default: "",
     },
-    username: {
-      type: String,
+    rating: {
+      type: Number,
       default: "",
     },
-    password: {
+    open: {
+      type: Boolean,
+      default: "",
+    },
+    image: {
       type: String,
       default: "",
     },
@@ -28,4 +36,4 @@ const userSchema = new Schema(
 
 //userSchema.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Favorites", favoritesSchema);

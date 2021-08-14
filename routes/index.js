@@ -25,7 +25,6 @@ router.get("/", (req, res, next) => {
     .then((response) => {
       const firstResult = response.jsonBody.businesses;
       const prettyJson = JSON.stringify(firstResult, null, 4);
-      // console.log(prettyJson);
       res.send(prettyJson);
     })
     .catch((e) => {
@@ -43,7 +42,7 @@ router.post("/", (req, res, next) => {
     .then((response) => {
       const firstResult = response.jsonBody.businesses;
       const prettyJson = JSON.stringify(firstResult, null, 4);
-      //console.log(prettyJson);
+
       res.send(prettyJson);
     })
     .catch((e) => {
