@@ -11,58 +11,56 @@ var userRouter = express.Router();
 const secret = "mysecretsshhh";
 
 /* GET users listing. */
-userRouter.route("/").get((req, res) => {
-  console.log("we here now");
-  res.send("no check auth");
-});
+// userRouter.route("/").get((req, res) => {
+//   console.log("we here now");
+//   res.send("no check auth");
+// });
 
-userRouter
-  .route("/signup")
-  .get((req, res) => {
-    res.send("not logged in");
-  })
-  .post((req, res) => {
-    console.log(`create user: ${req.body}`);
-    // passport.authenticate("local", {
-    //   successRedirect: "/",
-    //   failureRedirect: "/login",
-    //   failureFlash: true,
-    // });
-  });
 // userRouter
 //   .route("/")
-//   .get((req, res, next) => {
-//     User.find()
-//       .then((users) => {
-//         res.statusCode = 200;
-//         res.setHeader("Content-Type", "application/json");
-//         res.json(users);
-//       })
-//       .catch((err) => next(err));
+//   .get((req, res) => {
+//     res.send("not logged in");
 //   })
-//   .post((req, res, next) => {
-//     User.create(req.body)
-//       .then((user) => {
-//         console.log("User Created ", user);
-//         res.statusCode = 200;
-//         res.setHeader("Content-Type", "application/json");
-//         res.json(user);
-//       })
-//       .catch((err) => next(err));
-//   })
-//   .put((req, res) => {
-//     res.statusCode = 403;
-//     res.end("PUT operation not supported on /users");
-//   })
-//   .delete((req, res, next) => {
-//     User.deleteMany()
-//       .then((user) => {
-//         res.statusCode = 200;
-//         res.setHeader("Content-Type", "application/json");
-//         res.json(user);
-//       })
-//       .catch((err) => next(err));
+//   .post((req, res) => {
+//     console.log(`create user: ${req.body}`);
+//     // passport.authenticate("local", {
+//     //   successRedirect: "/",
+//     //   failureRedirect: "/login",
+//     //   failureFlash: true,
+//     // });
 //   });
+userRouter.route("/").get((req, res, next) => {
+  User.find()
+    .then((users) => {
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json(users);
+    })
+    .catch((err) => next(err));
+});
+// .post((req, res, next) => {
+//   User.create(req.body)
+//     .then((user) => {
+//       console.log("User Created ", user);
+//       res.statusCode = 200;
+//       res.setHeader("Content-Type", "application/json");
+//       res.json(user);
+//     })
+//     .catch((err) => next(err));
+// })
+// .put((req, res) => {
+//   res.statusCode = 403;
+//   res.end("PUT operation not supported on /users");
+// })
+// .delete((req, res, next) => {
+//   User.deleteMany()
+//     .then((user) => {
+//       res.statusCode = 200;
+//       res.setHeader("Content-Type", "application/json");
+//       res.json(user);
+//     })
+// .catch((err) => next(err));
+// });
 
 // userRouter
 //   .route("/login")

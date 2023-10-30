@@ -8,11 +8,11 @@ const favoritesSchema = new Schema(
       type: String,
       default: "",
     },
-    phone: {
-      type: Number,
+    id: {
+      type: String,
       default: "",
     },
-    address: {
+    phone: {
       type: String,
       default: "",
     },
@@ -20,11 +20,11 @@ const favoritesSchema = new Schema(
       type: Number,
       default: "",
     },
-    open: {
+    is_closed: {
       type: Boolean,
       default: "",
     },
-    image: {
+    image_url: {
       type: String,
       default: "",
     },
@@ -36,4 +36,4 @@ const favoritesSchema = new Schema(
 
 //userSchema.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model("Favorites", favoritesSchema);
+module.exports = mongoose.model("Favorite", favoritesSchema);

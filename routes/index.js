@@ -35,7 +35,7 @@ router.get("/", (req, res, next) => {
 
 router.post("/", (req, res, next) => {
   const newSearchRequest = req.body;
-  console.log(newSearchRequest);
+  console.log(`here; ${newSearchRequest.term}, ${newSearchRequest.location}`);
   const client = yelp.client(apiKey);
   client
     .search(newSearchRequest)
