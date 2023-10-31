@@ -39,10 +39,10 @@ connect.then(
 var app = express();
 const initializePassport = require("./passport.config");
 const loginRouter = require("./routes/login");
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`server started on port ${PORT}`);
-});
+// const PORT = process.env.PORT || 8080;
+// app.listen(PORT, () => {
+//   console.log(`server started on port ${PORT}`);
+// });
 
 initializePassport(
   passport,
