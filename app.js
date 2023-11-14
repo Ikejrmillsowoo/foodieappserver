@@ -54,7 +54,6 @@ app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(flash());
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -62,6 +61,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(flash());
 app.use(passport.initialize());
 //to persist data
 app.use(passport.session());
