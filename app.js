@@ -21,20 +21,20 @@ var usersRouter = require("./routes/users");
 var favoritesRouter = require("./routes/favorites");
 var signupRouter = require("./routes/signup");
 
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-const url = "mongodb://localhost:27017/foodiesapp";
-const connect = mongoose.connect(url, {
-  useCreateIndex: true,
-  useFindAndModify: false,
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// const url = "mongodb://localhost:27017/foodiesapp";
+// const connect = mongoose.connect(url, {
+//   useCreateIndex: true,
+//   useFindAndModify: false,
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
-connect.then(
-  () => console.log("Connected correctly to server"),
-  (err) => console.log(err)
-);
+// connect.then(
+//   () => console.log("Connected correctly to server"),
+//   (err) => console.log(err)
+// );
 
 var app = express();
 const initializePassport = require("./passport.config");
