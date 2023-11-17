@@ -13,6 +13,8 @@ const yelp = require("yelp-fusion");
 //apiKey is placed in gitignore file.
 const apiKey = process.env.API_KEY;
 
+console.log(apiKey);
+
 const searchRequest = {
   term,
   location,
