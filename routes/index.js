@@ -11,7 +11,7 @@ const yelp = require("yelp-fusion");
 // Place holder for Yelp Fusion's API Key. Grab them
 // from https://www.yelp.com/developers/v3/manage_app
 //apiKey is placed in gitignore file.
-const apiKey = require("../sourceData");
+const apiKey = process.env.API_KEY;
 
 const searchRequest = {
   term,
