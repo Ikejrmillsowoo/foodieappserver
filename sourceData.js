@@ -1,2 +1,0 @@
-module.exports =
-  "GZ4ldZjxQXNdcE9ErrW6Ps5D6bQ2jEsBJ_xpL8ix0eK73iABEWF_E6OLX89dcZwc8Py-uDt-U7g-82ElYQavj5_VdyFIROetaimRbKPSvvQTg4N5e2zZ-7HSbGE_ZXYx";
