@@ -17,9 +17,9 @@ const methodOverride = require("method-override");
 const bcrypt = require("bcrypt");
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var favoritesRouter = require("./routes/favorites");
-var signupRouter = require("./routes/signup");
+//var usersRouter = require("./routes/users");
+//var favoritesRouter = require("./routes/favorites");
+//var signupRouter = require("./routes/signup");
 
 // const mongoose = require("mongoose");
 
@@ -72,9 +72,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/login", loginRouter);
-app.use("/signup", signupRouter);
+// app.use("/users", usersRouter);
+// app.use("/login", loginRouter);
+// app.use("/signup", signupRouter);
 // function auth(req, res, next) {
 //   console.log(req.headers);
 //   const authHeader = req.headers.authorization;
@@ -101,7 +101,7 @@ app.use("/signup", signupRouter);
 // }
 
 //app.use(withAuth);
-app.use("/favorites", favoritesRouter);
+//app.use("/favorites", favoritesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
